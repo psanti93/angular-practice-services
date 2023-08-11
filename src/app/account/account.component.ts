@@ -6,20 +6,16 @@ import { AccountService } from '../accounts.service';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
- // providers: [LoggingService]
 })
 export class AccountComponent {
   @Input() account: {name: string, status: string};
   @Input() id: number;
 
-  private loggingService ?: LoggingService;
   constructor(private accountService: AccountService){
-    this.loggingService = inject(LoggingService);
   }
 
   onSetTo(status: string) {
     this.accountService.updateStatus(this.id,status);
     this.accountService.statusUpdated.emit(status);
-    //this.loggingService.logStatusChange(status)
   }
 }
