@@ -10,7 +10,7 @@ import { AccountService } from './accounts.service';
 export class AppComponent implements OnInit{
   // initialize an array
   accounts: {name : string, status: string}[] = [];
-  constructor(private accountsService: AccountService){
+  constructor(private accountsService: AccountService){ // app component receives it's own instance of Account Service
 
   }
   ngOnInit(){
