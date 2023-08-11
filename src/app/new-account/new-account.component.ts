@@ -5,7 +5,7 @@ import { AccountService } from '../accounts.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService]
+ // providers: [LoggingService]
 })
 export class NewAccountComponent {
 
@@ -16,6 +16,6 @@ export class NewAccountComponent {
   // when we push a new account using account service's add account it's pushed on an instance of Account Service that's different than the one in app
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountService.addAccount(accountName, accountStatus)
-    this.loggingService.logStatusChange(accountStatus)
+   // this.loggingService.logStatusChange(accountStatus)
   }
 }
