@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core'
+import {EventEmitter, Injectable} from '@angular/core'
 import { LoggingService } from "./logging/logging.service";
 
 // Add injectable in order to inject the logging service into the account service properly only add if you expect something to be injected
@@ -34,5 +34,7 @@ updateStatus(id: number, status: string){
   this.accounts[id].status = status;
   this.loggingService.logStatusChange(status);
 }
+
+statusUpdated = new EventEmitter<string>();
 
 }
